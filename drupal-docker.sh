@@ -10,6 +10,10 @@ docker run -d --name drupal10 -d --link mysqldemo -p 8090:80 -e MYSQL_USER:root 
 
 sudo apt install unzip && unzip files.zip -d .
 
+# Windows adjustments
+unzip files.zip
+chmod 777 -R files7
+
 docker cp drupal10.sql mysqldemo:.
 docker cp settings.php drupal10:/opt/drupal/web/sites/default/
 docker cp files/ drupal10:/opt/drupal/web/sites/default/
